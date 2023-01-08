@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" , method=""><br>
+            <h4>All Voices</h4>
+            <div>
+                <div class="test">
+                    <label for="NAME">Begin Date</label>
+                    <!-- <input type="text" id="NAME" size="20"><br /><br /> -->
+                    <input type="date" id="NAME"><br /><br />
+                </div>
+                <div class="test">
+                    <label for="no">End Date</label>
+                    <!-- <input type="number" id="no" , size="45"><br /><br /> -->
+                    <input type="date" id="no"><br /><br />
+                </div>
+                <div class="test">
+                    <label for="age">Status</label>
+                    <!-- <input type="number" id="age" size="45"><br /><br /> -->
+                    <input list="browsers" id="age" name="myBrowser" /></label><br/><br/>
+                    <datalist id="browsers">
+                        <option value="Any">`
+                        <option value="Navya">
+                        <option value="Divya">
+                        <option value="Chaitanya">
+                        <option value="Neha">
+                        <option value="Saibhargav">
+                    </datalist>
+                </div>
+                <div class="test">
+                    <label for="S_NO:">Client</label>
+                    <!-- <input type="text" id="S_NO" size="20"><br /><br /> -->
+                    <input list="sno" id="S_NO" name="myBrowser" /></label><br/><br/>
+                    <datalist id="sno">
+                        <option value="Any">
+                        <option value="Draft">
+                        <option value="Paid">
+                        <option value="Partial Payment">
+                    </datalist>
+                </div>
+            </div>
+            <p>*This data has been shown according to your given informations</p>
+        </form>
+    </div>
+    </div>
+    <div>
+        <div class="container-2">
+            <table class="table">
+                <tr>
+                    <th data-column="invoiceid" data-order="desc">Invoice id &#9650</th>
+                    <th data-column="clientname" data-order="desc">Client Name &#9650</th>
+                    <th data-column="date" data-order="desc">Date &#9650</th>
+                    <th data-column="duedate" data-order="desc">Due Date &#9650</th>
+                    <th data-column="total" data-order="desc">Total &#9650</th>
+                    <th data-column="balance" data-order="desc">Balance &#9650</th>
+                    <th data-column="status" data-order="desc">Status &#9650</th>
+                </tr>
+
+                <tbody id="myTable">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script>
+        var myArray = [
+            { 'invoiceid': '1', 'clientname': 'Navya', 'date': '07/01/2023', 'duedate': '15/01/2023', 'total': '$678', 'balance': '$678', 'status': 'Draft' },
+            { 'invoiceid': '2', 'clientname': 'Divya', 'date': '07/01/2023', 'duedate': '15/01/2023', 'total': '$678', 'balance': '$678', 'status': 'Draft' },
+            { 'invoiceid': '3', 'clientname': 'Henry', 'date': '09/01/2023', 'duedate': '13/01/2023', 'total': '$778', 'balance': '$778', 'status': 'Paid' },
+            { 'invoiceid': '4', 'clientname': 'Chaitanya', 'date': '08/01/2023', 'duedate': '13/01/2023', 'total': '$778', 'balance': '$778', 'status': 'Paid' },
+            { 'invoiceid': '5', 'clientname': 'Arvind', 'date': '08/01/2023', 'duedate': '14/01/2023', 'total': '$888', 'balance': '$888', 'status': 'Partial Payment' },
+            { 'invoiceid': '6', 'clientname': 'Kartik', 'date': '09/01/2023', 'duedate': '14/01/2023', 'total': '$888', 'balance': '$888', 'status': 'Partial Payment' },
+            { 'invoiceid': '7', 'clientname': 'Emil', 'date': '10/01/2023', 'duedate': '15/01/2023', 'total': '$999', 'balance': '$999', 'status': 'Draft' },
+            { 'invoiceid': '8', 'clientname': 'Amalu', 'date': '10/01/2023', 'duedate': '15/01/2023', 'total': '$999', 'balance': '$999', 'status': 'Draft' },
+            { 'invoiceid': '9', 'clientname': 'Divya', 'date': '11/01/2023', 'duedate': '16/01/2023', 'total': '$111', 'balance': '$111', 'status': 'Paid' },
+            { 'invoiceid': '10', 'clientname': 'Neha', 'date': '11/01/2023', 'duedate': '16/01/2023', 'total': '$111', 'balance': '$111', 'status': 'Paid' },
+            { 'invoiceid': '11', 'clientname': 'Megha', 'date': '12/01/2023', 'duedate': '17/01/2023', 'total': '$252', 'balance': '$252', 'status': 'Partial Payment' },
+            { 'invoiceid': '12', 'clientname': 'Anusha', 'date': '12/01/2023', 'duedate': '17/01/2023', 'total': '$252', 'balance': '$252', 'status': 'Partial Payment' },
+            { 'invoiceid': '13', 'clientname': 'Harsh', 'date': '13/01/2023', 'duedate': '18/01/2023', 'total': '$305', 'balance': '$305', 'status': 'Draft' },
+            { 'invoiceid': '14', 'clientname': 'Saibhargav', 'date': '13/01/2023', 'duedate': '18/01/2023', 'total': '$305', 'balance': '$305', 'status': 'Draft' },
+            { 'invoiceid': '15', 'clientname': 'Ranjith', 'date': '14/01/2023', 'duedate': '19/01/2023', 'total': '$105', 'balance': '$105', 'status': 'Paid' },
+        ]
+
+        $('th').on('click', function () {
+            var column = $(this).data('column')
+            var order = $(this).data('order')
+            var text = $(this).html()
+            text = text.substring(0, text.length - 1)
+
+            if (order == 'desc') {
+                $(this).data('order', "asc")
+                myArray = myArray.sort((a, b) => a[column] > b[column] ? 1 : -1)
+                text += '&#9660'
+
+            } else {
+                $(this).data('order', "desc")
+                myArray = myArray.sort((a, b) => a[column] < b[column] ? 1 : -1)
+                text += '&#9650'
+
+            }
+            $(this).html(text)
+            buildTable(myArray)
+        })
+
+        buildTable(myArray)
+
+        function buildTable(data) {
+            var table = document.getElementById('myTable')
+            table.innerHTML = ''
+            for (var i = 0; i < data.length; i++) {
+                var row = `<tr>
+							<td>${data[i].invoiceid}</td>
+							<td>${data[i].clientname}</td>
+							<td>${data[i].date}</td>
+							<td>${data[i].duedate}</td>
+							<td>${data[i].total}</td>
+							<td>${data[i].balance}</td>
+							<td>${data[i].status}</td></tr>`
+                table.innerHTML += row
+
+            }
+        }
+
+    </script>
+</body>
+
+</html>
